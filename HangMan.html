@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>HangMan</title>
+    <link rel="stylesheet" href="HangMan.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="HangMan.js" defer></script>
+
 </head>
 <body>
-
+    <div class="container">
+        <h1 class="text-center">Hangman</h1>
+        <div class="float-right">Wrong Guesses: <span id="maxWrong"></span></div>
+        <div class="text-center">
+            <p>Guess the name of the country</p>
+            <p id="wordSpotlight">The word to be guessed goes here</p>
+            <div id="keyboard"></div>
+            <button class="btn btn-info" onclick="reset()">Reset</button>
+        </div>
+    </div>
 </body>
 </html>
