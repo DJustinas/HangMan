@@ -4,6 +4,7 @@
     <list default="true" id="f6b7ceaa-c754-4dd2-877b-bc0fb2055953" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HangMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/HangMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HangMan.js" beforeDir="false" afterPath="$PROJECT_DIR$/HangMan.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../KOSMOSAS/GitHub.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -48,7 +49,8 @@
       <updated>1615550210718</updated>
       <workItem from="1615550211817" duration="858000" />
       <workItem from="1615552500604" duration="418000" />
-      <workItem from="1615552932760" duration="3552000" />
+      <workItem from="1615552932760" duration="6973000" />
+      <workItem from="1615748149042" duration="1136000" />
     </task>
     <servers />
   </component>
