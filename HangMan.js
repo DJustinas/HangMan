@@ -4,7 +4,7 @@ let country_names = [
     "england",
     "latvia",
     "estonia",
-    "russian",
+    "russia",
     "france",
     "germany",
     "netherlands",
@@ -19,7 +19,6 @@ let maxWrong = 6
 let mistakes = 0
 let guessed = []
 let wordStatus = null
-
 
 function randomWord() {
     answer = country_names[Math.floor(Math.random() * country_names.length)]
@@ -38,46 +37,40 @@ function generateButtons() {
     `).join('');
 
     document.getElementById('keyboard').innerHTML = buttonsHTML;
-
-
 }
-
-
-
-
-
 
 function handleGuess(chosenLetter) {
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null
     document.getElementById(chosenLetter).setAttribute('disabled', true)
 
 
-    if(answer.indexOf(chosenLetter) >= 0) {
+    if (answer.indexOf(chosenLetter) >= 0) {
         guessedWord()
         checkIfGameWon()
     } else if (answer.indexOf(chosenLetter) === -1) {
         mistakes++
         updateMistakes()
         checkIfGameLost()
+        updateHangmanPicture()
     }
 }
 
-function checkIfGameWon(){
+function updateHangmanPicture() {
+    document.getElementById('hangmanPic').src = "./hangmanImage/" + mistakes + '.png'
+}
+
+function checkIfGameWon() {
     if (wordStatus === answer) {
         document.getElementById('keyboard').innerHTML = "You Won!!!"
     }
 }
-function checkIfGameLost(){
+
+function checkIfGameLost() {
     if (mistakes === maxWrong) {
+        document.getElementById('wordSpotlight').innerHTML = answer
         document.getElementById('keyboard').innerHTML = "You Lost!!!"
     }
 }
-
-
-
-
-
-
 
 function guessedWord() {
     wordStatus = answer.split('').map(letter => guessed.indexOf(letter) >= 0 ? letter : " _ ").join('')
@@ -88,7 +81,6 @@ function guessedWord() {
 function updateMistakes() {
     document.getElementById('mistakes').innerHTML = mistakes
 }
-
 
 function reset() {
     mistakes = 0
@@ -101,16 +93,6 @@ function reset() {
 }
 
 document.getElementById('maxWrong').innerHTML = maxWrong
-
-
-
-
-
-
-
-
-
-
 
 randomWord()
 generateButtons()
