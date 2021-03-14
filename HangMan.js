@@ -51,16 +51,27 @@ function handleGuess(chosenLetter) {
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null
     document.getElementById(chosenLetter).setAttribute('disabled', true)
 
-    alert(answer)
+
     if(answer.indexOf(chosenLetter) >= 0) {
         guessedWord()
+        checkIfGameWon()
     } else if (answer.indexOf(chosenLetter) === -1) {
         mistakes++
         updateMistakes()
+        checkIfGameLost()
     }
 }
 
-
+function checkIfGameWon(){
+    if (wordStatus === answer) {
+        document.getElementById('keyboard').innerHTML = "You Won!!!"
+    }
+}
+function checkIfGameLost(){
+    if (mistakes === maxWrong) {
+        document.getElementById('keyboard').innerHTML = "You Lost!!!"
+    }
+}
 
 
 
@@ -78,6 +89,16 @@ function updateMistakes() {
     document.getElementById('mistakes').innerHTML = mistakes
 }
 
+
+function reset() {
+    mistakes = 0
+    guessed = []
+    document.getElementById('hangmanPic').src = "./hangmanImage/0.png"
+    randomWord()
+    guessedWord()
+    updateMistakes()
+    generateButtons()
+}
 
 document.getElementById('maxWrong').innerHTML = maxWrong
 
